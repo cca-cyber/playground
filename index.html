@@ -4,19 +4,17 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=1100, initial-scale=1.0">
-    <title>WebVM - Linux virtualization in WebAssembly</title>
+    <title>CCA Cyber Playground: Featuring WebVM - Linux virtualization in WebAssembly</title>
 
-    <meta name="description" content="Server-less virtual machine, networking included, running browser-side in HTML5/WebAssembly. Code in any programming language inside this Linux terminal.">
-    <meta name="keywords" content="WebVM, Virtual Machine, CheerpX, x86 virtualization, WebAssembly, Tailscale, JIT">
-    <meta property="og:title" content="WebVM - Linux virtualization in WebAssembly" />
+    <meta name="description" content="Server-less in browser virtual machine, networking included, running in WebAssembly. Experience 32 bit Kali Linux from your browser.">
+    <meta name="keywords" content="WebVM, Virtual Machine, CheerpX, x86 virtualization, WebAssembly, Tailscale, JIT, Kali Linux, Kali">
+    <meta property="og:title" content="WebVM meets Kali Linux - WebAssembly VM" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="WebVM"/>
+    <meta property="og:site_name" content="Kali WebVM"/>
     <meta property="og:image" content="https://webvm.io/assets/social.png" />
-    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@leaningtech" />
-    <meta name="twitter:title" content="WebVM - Linux virtualization in WebAssembly" />
-    <meta name="twitter:description" content="Server-less virtual machine, networking included, running browser-side in HTML5/WebAssembly. Code in any programming language inside this Linux terminal.">
-    <meta name="twitter:image" content="https://webvm.io/assets/social.png" />
+    <meta name="twitter:title" content="Kali Linux Playground using WebVM - Linux virtualization in WebAssembly" />
+    <meta name="twitter:description" content="Server-less in browser virtual machine, networking included, running in WebAssembly. Experience 32 bit Kali Linux from your browser.">
 
     <!-- Apple iOS web clip compatibility tags -->
     <meta name="application-name" content="WebVM" />
@@ -115,6 +113,7 @@ __      __   _  __   ____  __
 
 	//Utility namespace to group all functionality related to printing (both error and non error) messages
 	const color= "\x1b[1;35m";
+	const topColor = "\x1b[1;33m"
 	const bold= "\x1b[1;37m";
 	const underline= "\x1b[94;4m";
 	const normal= "\x1b[0m";
@@ -122,10 +121,10 @@ __      __   _  __   ____  __
 		getAsciiTitle: function ()
 		{
 			var title = [
-				color + "                        __      __   _  __   ____  __       " + normal,
-				color + "                        \\ \\    / /__| |_\\ \\ / /  \\/  | " + normal,
-				color + "                         \\ \\/\\/ / -_) '_ \\ V /| |\\/| | " + normal,
-				color + "                          \\_/\\_/\\___|_.__/\\_/ |_|  |_|  " + normal,
+				topColor + "                        __      __   _  __   ____  __       " + normal,
+				topColor + "                        \\ \\    / /__| |_\\ \\ / /  \\/  | " + normal,
+				topColor + "                         \\ \\/\\/ / -_) '_ \\ V /| |\\/| | " + normal,
+				topColor + "                          \\_/\\_/\\___|_.__/\\_/ |_|  |_|  " + normal,
 
 			];
 			return title;
@@ -136,28 +135,20 @@ __      __   _  __   ____  __
 				"+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+",
 				"|                                                                             |",
 				"| WebVM is a server-less virtual Linux environment running fully client-side  |",
-				"| in HTML5/WebAssembly.                                                       |",
-				"|                                                                             |",
+				"| in HTML5/WebAssembly. We take advantage of this cool tech to customize it   |",
+				"| to run a slimmed down 32 bit Kali Linux                                     |",
 				"| WebVM is powered by the CheerpX virtualization engine, which enables safe,  |",
 				"| sandboxed client-side execution of x86 binaries on any browser.             |",
+				"| The engine for running this is called CheerpX                               |",
 				"|                                                                             |",
 				"| CheerpX includes an x86-to-WebAssembly JIT compiler, a virtual block-based  |",
 				"| file system, and a Linux syscall emulator.                                  |",
 				"|                                                                             |",
-				"| [NEW!] Your own WebVM with custom images via Dockerfile:                    |",
-				"|                                                                             |",
-				"| " + underline + "https://leaningtech.com/mini-webvm-your-linux-box-from-dockerfile-via-wasm" + normal +"  |",
-				"|                                                                             |",
 				"+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+",
+				"   It takes a bit to start up so I'd say give it like 15 to 60 seconds to start. ",
+				"   A faster internet connection is recommended.",
 				"",
-				"   Welcome to WebVM. If unsure, try these examples:",
-				"",
-				"     python3 examples/python3/fibonacci.py ",
-				"     gcc -o helloworld examples/c/helloworld.c && ./helloworld",
-				"     objdump -d ./helloworld | less -M",
-				"     vim examples/c/helloworld.c",
-				"     curl --max-time 15 parrot.live  # requires networking",
-				"",
+				"   Welcome to Kali Linux:",
 				];
 			return text;
 		},
@@ -350,15 +341,6 @@ __      __   _  __   ____  __
 	}
 	loadCX();
     </script>
-<!-- Google tag (gtag.js) -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-818T3Y0PEY"></script>
-<script defer>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-818T3Y0PEY');
-</script>
   </body>
 </html>
 
