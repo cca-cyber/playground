@@ -1,12 +1,12 @@
 FROM --platform=i386 kalilinux/kali-rolling:i386
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get clean && apt-get update && apt-get -y upgrade
-RUN apt-get -y install apt-utils gcc \
+RUN apt-get -y install --no-install-recommends apt-utils gcc \
 	python3 vim unzip \
 	fakeroot dbus base whiptail hexedit \
 	patch wamerican ucf manpages \
 	file make dialog curl \
-	less cowsay netcat-openbsd zsh nano neofetch tmux screen binwalk gdb wget
+	less cowsay netcat-openbsd zsh nano neofetch tmux binwalk gdb wget
 RUN useradd -m user && echo "user:password" | chpasswd
 COPY --chown=user:user ./examples /home/user/examples
 RUN chmod -R +x  /home/user/examples/lua
