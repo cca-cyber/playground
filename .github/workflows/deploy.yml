@@ -11,13 +11,13 @@ on:
         type: string
         description: 'Path to the Dockerfile'
         required: true
-        default: 'dockerfiles/debian_mini'
+        default: 'dockerfiles/kali'
 
       IMAGE_SIZE:
         type: string
         description: 'Image size, 950M max'
         required: true
-        default: '600M'
+        default: '950M'
 
       DEPLOY_TO_GITHUB_PAGES:
         type: boolean
@@ -29,7 +29,7 @@ on:
         type: boolean
         description: 'Upload GitHub release'
         required: true
-        default: false
+        default: true
 
 jobs:
 
